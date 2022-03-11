@@ -32,5 +32,4 @@ namespace EmployeeWages
             Console.Read();
         }
     }
-
 }
