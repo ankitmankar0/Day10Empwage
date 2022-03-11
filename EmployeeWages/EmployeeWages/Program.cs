@@ -7,18 +7,12 @@ namespace EmployeeWages
         //Declaring Constant Variable
         public const int FULL_TIME = 1;
         public const int PART_TIME = 2;
-        private string company;
-        public int wagePerhour;
         private int maxHoursPerMonth;
         private int maxWorkingDays;
         private int wagePerHour;
 
         public CompanyEmpWage(string company, int wagePerhour, int maxHoursPerMonth, int maxWorkingDays)
         {
-            this.company = company;
-            this.wagePerhour = wagePerhour;
-            this.maxHoursPerMonth = maxHoursPerMonth;
-            this.maxWorkingDays = maxWorkingDays;
         }
 
         //Creating a interface 
@@ -30,6 +24,7 @@ namespace EmployeeWages
         //Implements the interface in class
         public class EmpBuilderWage : IComputationEmployeeWage
         {
+          
             private int numOfCompany = 0;
 
             private CompanyEmpWage[] companyEmpWageArray;
@@ -49,7 +44,7 @@ namespace EmployeeWages
             {
                 for (int i = 0; i < numOfCompany; i++)
                 {
-                    object p = companyEmpWageArray[i].setTotalEmpWage(this.ComputeEmpWage(this.companyEmpWageArray[i]));
+                    companyEmpWageArray[i].setTotalEmpWage(this.ComputeEmpWage(this.companyEmpWageArray[i]));
                     Console.WriteLine(this.companyEmpWageArray[i].ToString());
                 }
             }
